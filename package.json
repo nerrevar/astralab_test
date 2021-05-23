@@ -83,7 +83,6 @@
       "no-iterator": "error",
       "no-lone-blocks": "error",
       "no-loop-func": "error",
-      "no-magic-numbers": "error",
       "no-multi-spaces": "warn",
       "no-multi-str": "warn",
       "no-new": "error",
