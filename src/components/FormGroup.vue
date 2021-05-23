@@ -16,14 +16,16 @@
       :class="{
         'form-group__input': item.inputType !== 'password',
         'form-group__input_with-eye': item.inputType === 'password',
+        'form-group__input_error': errorFields.indexOf(item.inputName) !== -1,
       }"
       :type="item.inputType"
       :name="item.inputName"
+      ref="input"
       @input="validate($event.target.value)"
     />
     <span
       class="form-group__error"
-      v-if="this.errorFields.indexOf(item.inputName) !== -1"
+      v-if="errorFields.indexOf(item.inputName) !== -1"
     >
       {{ item.errorMessage }}
     </span>
@@ -53,6 +55,19 @@ export default {
           this.$emit('validate', this.item.inputName)
         else
           this.$emit('invalidate', this.item.inputName)
+    },
+    isValid () {
+      if (this.item.validationFunction)
+        if (this.item.validationFunction(this.$refs.input.value))
+          return true
+        else {
+          this.$emit('invalidate', this.item.inputName)
+          return false
+        }
+      return true
+    },
+    getData () {
+      return { [this.item.inputName]: this.$refs.input.value }
     },
   },
 }
@@ -87,6 +102,9 @@ export default {
   &__input
     +ellipse
     padding: 10px 2em
+
+    &_error
+      background-color: #ffe0e6
 
     &_with-eye
       +ellipse

@@ -1,19 +1,33 @@
 <template>
   <div class="wrapper">
     <div class="title">
-      Sign Up
+      Sign In
     </div>
     <FormTemplate
       :formFields="formFields"
-      submitText="Sign Up"
+      submitText="Sign In"
       @submit="submit($event)"
     />
-    <div class="sign-in">
-      Already have an account?
+    <div class="sign-up">
+      Don’t have an account yet?
       <br />
-      <router-link to="/sign_in">
-        Sign In
+      <router-link to="/sign_up">
+        Sign Up
       </router-link>
+    </div>
+    <div
+      class="login-error"
+      v-show="loginErrorVisible"
+    >
+      <span class="login-error__text">
+        Wrong email or password
+      </span>
+      <img
+        class="login-error__close"
+        src="@/assets/close.svg"
+        alt="X"
+        @click="setLoginErrorVisible(false)"
+      />
     </div>
   </div>
 </template>
@@ -22,11 +36,9 @@
 import FormTemplate from '@/components/FormTemplate.vue'
 
 export default {
-  name: 'SignUpView',
+  name: 'SignInView',
   components: { FormTemplate },
-  data: () => {
-    const nameValidationFunction = str => str.trim() !== '' && str.replace(/[a-z ]+/i, '') === ''
-
+  data () {
     const emailValidationFunction = str => str !== '' &&
         str.replace(/^(([a-z\d+\-/]+([.][a-z\d\-+]+)*)|("[\S ]+"))@[a-z\-\d]+\.[a-z\d]+$/i, '') === ''
 
@@ -43,13 +55,6 @@ export default {
     return {
       formFields: [
         {
-          label: 'Full name',
-          inputType: 'text',
-          inputName: 'name',
-          errorMessage: 'Must contain only english letters',
-          validationFunction: nameValidationFunction,
-        },
-        {
           label: 'Email',
           inputType: 'email',
           inputName: 'email',
@@ -63,27 +68,37 @@ export default {
           inputName: 'password',
           errorMessage: 'Enter valid password',
           validationFunction: passwordValidationFunction,
-        },
-        {
-          label: 'Repeat password',
-          inputType: 'password',
-          inputName: 'passwordReapeat',
-          errorMessage: 'Enter valid password',
-          validationFunction: passwordValidationFunction,
         }
       ],
-      errorFields: [],
+      loginErrorVisible: false,
     }
   },
-  methods: { submit (/* data*/) {} },
+  methods: {
+    setLoginErrorVisible (val) {
+      this.loginErrorVisible = val
+    },
+    submit (/* data*/) {},
+  },
 }
 </script>
 
 <style lang="sass" scoped>
-.sign-in
+.sign-up
   text-align: center
   margin-top: 2em
 
   & > a
     color: black
+
+.login-error
+  +ellipse
+  position: absolute
+  right: 12px
+  bottom: 12px
+  left: 12px
+  height: 48px
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  background-color: #ff6683
 </style>

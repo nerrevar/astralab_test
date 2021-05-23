@@ -28,6 +28,9 @@
 </template>
 
 <style lang="sass" scoped>
+.wrapper
+  justify-content: space-between
+
 .subtitle
   text-align: center
   padding: 0.5em
