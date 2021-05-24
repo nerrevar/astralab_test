@@ -9,7 +9,10 @@
       @validate="validate($event)"
     />
     <div
-      class="form__submit"
+      :class="{
+        'form__submit': errorFields.length === 0,
+        'form__submit_inactive': errorFields.length !== 0,
+      }"
       @click="validateForm"
     >
       {{ submitText }}
@@ -72,4 +75,17 @@ export default {
     background-color: #1e1a3e
     color: white
     text-align: center
+
+    &_inactive
+      +ellipse
+      background-color: #a5a3b2
+      color: white
+      text-align: center
+
+    &:active::after
+      +active
+      width: calc(100% - 68px)
+      height: 48px
+      margin-left: -29px
+      margin-top: -34px
 </style>

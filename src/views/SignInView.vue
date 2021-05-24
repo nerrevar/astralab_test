@@ -8,13 +8,16 @@
       submitText="Sign In"
       @submit="submit($event)"
     />
-    <div class="sign-up">
+    <router-link
+      class="sign-up"
+      to="/sign_up"
+    >
       Don’t have an account yet?
       <br />
-      <router-link to="/sign_up">
+      <span class="link">
         Sign Up
-      </router-link>
-    </div>
+      </span>
+    </router-link>
     <div
       class="login-error"
       v-show="loginErrorVisible"
@@ -91,8 +94,12 @@ export default {
   text-align: center
   margin-top: 2em
 
-  & > a
-    color: black
+  &:active::after
+    +active
+    width: calc(1em * 0.6 * 26)
+    height: 40px
+    left: calc(50% - 1em * 0.6 * 13)
+    margin-top: -40px
 
 .login-error
   +ellipse

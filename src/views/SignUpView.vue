@@ -8,13 +8,16 @@
       submitText="Sign Up"
       @submit="submit($event)"
     />
-    <div class="sign-in">
+    <router-link
+      class="sign-in"
+      to="/sign_in"
+    >
       Already have an account?
       <br />
-      <router-link to="/sign_in">
+      <span class="link">
         Sign In
-      </router-link>
-    </div>
+      </span>
+    </router-link>
     <div
       class="signup-error"
       v-if="errorText !== ''"
@@ -47,16 +50,18 @@ import {
 export default {
   name: 'SignUpView',
   components: { FormTemplate },
-  data: () => ({
-    formFields: [
-      nameFormFieldParams,
-      emailFormFieldParams,
-      passwordFormFieldParams,
-      repeatPasswordFormFieldParams
-    ],
-    errorFields: [],
-    errorText: '',
-  }),
+  data () {
+    return {
+      formFields: [
+        nameFormFieldParams,
+        emailFormFieldParams,
+        passwordFormFieldParams,
+        repeatPasswordFormFieldParams
+      ],
+      errorFields: [],
+      errorText: '',
+    }
+  },
   computed: mapGetters(['getFirebaseApp']),
   methods: {
     ...mapMutations(['setUser']),
@@ -92,8 +97,12 @@ export default {
   text-align: center
   margin-top: 2em
 
-  & > a
-    color: black
+  &:active::after
+    +active
+    width: calc(1em * 0.6 * 24)
+    height: 40px
+    left: calc(50% - 1em * 0.6 * 12)
+    margin-top: -40px
 
 .signup-error
   +ellipse

@@ -13,11 +13,12 @@
       >
         Sign Up
       </div>
-      <img
-        class="button-group__next"
-        src="@/assets/arrow-right.svg"
-        alt="&#10140;"
-      />
+      <div class="button-group__next">
+        <img
+          src="@/assets/arrow-right.svg"
+          alt="&#10140;"
+        />
+      </div>
     </div>
     <img
       class="enter-img"
@@ -49,10 +50,30 @@
     +shadow
     background-color: white
 
+    &:active::after
+      +active
+      width: 115px
+      height: 48px
+      margin-left: -31px
+      margin-top: -34px
+
   &__next
     +round
     +shadow
     background-color: #1E1A3E
     color: white
-    padding: 12px
+    padding: 10px
+    width: 48px
+    text-align: center
+
+    & > img
+      width: 24px
+      height: 24px
+
+    &:active::after
+      +active
+      width: 48px
+      height: 48px
+      margin-left: -12px
+      margin-top: -40px
 </style>
