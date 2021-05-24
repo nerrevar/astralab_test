@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignInView.vue renders 1`] = `
+<div
+  class="wrapper"
+>
+  <div
+    class="title"
+  >
+    
+    Sign In
+  
+  </div>
+   
+  <formtemplate-stub
+    formfields="[object Object],[object Object]"
+    submittext="Sign In"
+  />
+   
+  <div
+    class="sign-up"
+  >
+    
+    Don’t have an account yet?
+    
+    <br />
+     
+    <router-link-stub
+      ariacurrentvalue="page"
+      event="click"
+      tag="a"
+      to="/sign_up"
+    >
+      
+      Sign Up
+    
+    </router-link-stub>
+  </div>
+   
+  <div
+    class="login-error"
+    style="display: none;"
+  >
+    <span
+      class="login-error__text"
+    >
+      
+      Wrong email or password
+    
+    </span>
+     
+    <img
+      alt="X"
+      class="login-error__close"
+      src="@/assets/close.svg"
+    />
+  </div>
+</div>
+`;

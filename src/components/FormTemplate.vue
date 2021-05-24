@@ -53,7 +53,7 @@ export default {
           if (child.isValid())
             Object.assign(result, child.getData())
 
-        if (result.length === this.formFields.length)
+        if (Object.keys(result).length === this.formFields.length)
           this.$emit('submit', result)
       }
     },

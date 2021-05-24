@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpView.vue renders 1`] = `
+<div
+  class="wrapper"
+>
+  <div
+    class="title"
+  >
+    
+    Sign Up
+  
+  </div>
+   
+  <formtemplate-stub
+    formfields="[object Object],[object Object],[object Object],[object Object]"
+    submittext="Sign Up"
+  />
+   
+  <div
+    class="sign-in"
+  >
+    
+    Already have an account?
+    
+    <br />
+     
+    <router-link-stub
+      ariacurrentvalue="page"
+      event="click"
+      tag="a"
+      to="/sign_in"
+    >
+      
+      Sign In
+    
+    </router-link-stub>
+  </div>
+</div>
+`;

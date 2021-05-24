@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormGroup.vue input type - text renders 1`] = `
+<div
+  class="form-group"
+>
+  <div
+    class="form-group-label"
+  >
+    <span
+      class="form-group-label__title"
+    >
+      
+      Full name
+    
+    </span>
+     
+    <!---->
+  </div>
+   
+  <input
+    class="form-group__input"
+    name="name"
+    type="text"
+  />
+   
+  <span
+    class="form-group__error_hidden"
+  >
+    
+     
+  
+  </span>
+</div>
+`;

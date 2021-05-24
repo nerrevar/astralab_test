@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainView.vue renders 1`] = `
+<div
+  class="wrapper"
+>
+  <div
+    class="title"
+  >
+    
+    Hello, John Doe!
+  
+  </div>
+   
+  <img
+    alt=""
+    class="main-img"
+    src="@/assets/woman_main.svg"
+  />
+</div>
+`;

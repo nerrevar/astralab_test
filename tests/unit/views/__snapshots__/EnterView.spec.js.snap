@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EnterView.vue renders 1`] = `
+<div
+  class="wrapper"
+>
+  <div
+    class="title"
+  >
+    
+    Ready for a great User experience?
+  
+  </div>
+   
+  <div
+    class="subtitle"
+  >
+    
+    Bring your media to the next level!
+  
+  </div>
+   
+  <div
+    class="button-group"
+  >
+    <div
+      class="button-group__signup"
+    >
+      
+      Sign Up
+    
+    </div>
+     
+    <img
+      alt="&#10140;"
+      class="button-group__next"
+      src="@/assets/arrow-right.svg"
+    />
+  </div>
+   
+  <img
+    alt=""
+    class="enter-img"
+    src="@/assets/woman_enter.svg"
+  />
+</div>
+`;
