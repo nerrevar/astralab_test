@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="title">
-      Hello, {{ user.name }}!
+      Hello, {{ user.displayName }}!
     </div>
     <img
       class="main-img"

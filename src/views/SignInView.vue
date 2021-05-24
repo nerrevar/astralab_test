@@ -33,11 +33,13 @@
 </template>
 
 <script>
+import { mapMutations, mapGetters } from 'vuex'
+
 import FormTemplate from '@/components/FormTemplate.vue'
 
 import {
   emailFormFieldParams,
-  passwordFormFieldParams,
+  passwordFormFieldParams
 } from '@/utils'
 
 export default {
@@ -52,11 +54,34 @@ export default {
       loginErrorVisible: false,
     }
   },
+  computed: mapGetters(['getFirebaseApp']),
   methods: {
+    ...mapMutations(['setUser']),
     setLoginErrorVisible (val) {
       this.loginErrorVisible = val
     },
-    submit (/* data*/) {},
+    submit (data) {
+      this.getFirebaseApp.auth().signInWithEmailAndPassword(data.email, data.password)
+        .then(userCredential => {
+          const { displayName, email } = userCredential.user
+          this.setUser({
+            user: {
+              displayName,
+              email,
+            },
+          })
+          this.$router.push('/main')
+        })
+        .catch(() => {
+          this.loginErrorVisible = true
+          setTimeout(
+            () => {
+              this.loginErrorVisible = false
+            },
+            10000
+          )
+        })
+    },
   },
 }
 </script>

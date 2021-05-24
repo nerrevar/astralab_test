@@ -36,5 +36,7 @@ exports[`SignUpView.vue renders 1`] = `
     
     </router-link-stub>
   </div>
+   
+  <!---->
 </div>
 `;

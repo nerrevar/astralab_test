@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "firebase": "*",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -64,9 +65,15 @@
         "multi"
       ],
       "default-param-last": "error",
-      "dot-location": ["warn", "property"],
+      "dot-location": [
+        "warn",
+        "property"
+      ],
       "dot-notation": "error",
-      "eqeqeq": ["warn", "always"],
+      "eqeqeq": [
+        "warn",
+        "always"
+      ],
       "grouped-accessor-pairs": "error",
       "no-alert": "warn",
       "no-caller": "error",
@@ -98,7 +105,10 @@
       "no-void": "error",
       "prefer-promise-reject-errors": "error",
       "prefer-regex-literals": "error",
-      "radix": ["error", "as-needed"],
+      "radix": [
+        "error",
+        "as-needed"
+      ],
       "require-await": "error",
       "vars-on-top": "error",
       "wrap-iife": "error",
@@ -108,11 +118,26 @@
       "no-undef-init": "error",
       "no-undefined": "error",
       "no-use-before-define": "error",
-      "array-bracket-newline": ["error", "consistent"],
-      "array-bracket-spacing": ["error", "never"],
-      "array-element-newline": ["error", "consistent"],
-      "block-spacing": ["error", "always"],
-      "brace-style": ["warn", "1tbs"],
+      "array-bracket-newline": [
+        "error",
+        "consistent"
+      ],
+      "array-bracket-spacing": [
+        "error",
+        "never"
+      ],
+      "array-element-newline": [
+        "error",
+        "consistent"
+      ],
+      "block-spacing": [
+        "error",
+        "always"
+      ],
+      "brace-style": [
+        "warn",
+        "1tbs"
+      ],
       "comma-dangle": [
         "warn",
         {
@@ -122,20 +147,35 @@
       "comma-spacing": "warn",
       "comma-style": "warn",
       "computed-property-spacing": "warn",
-      "eol-last": ["warn", "always"],
+      "eol-last": [
+        "warn",
+        "always"
+      ],
       "func-call-spacing": "warn",
-      "func-names": ["error", "as-needed"],
+      "func-names": [
+        "error",
+        "as-needed"
+      ],
       "func-style": "error",
-      "function-call-argument-newline": ["warn", "consistent"],
+      "function-call-argument-newline": [
+        "warn",
+        "consistent"
+      ],
       "function-paren-newline": "warn",
       "implicit-arrow-linebreak": "error",
-      "indent": ["error", 2],
+      "indent": [
+        "error",
+        2
+      ],
       "key-spacing": "warn",
       "keyword-spacing": "warn",
       "lines-around-comment": "warn",
       "max-lines": "warn",
       "max-statements-per-line": "error",
-      "multiline-ternary": ["error", "always-multiline"],
+      "multiline-ternary": [
+        "error",
+        "always-multiline"
+      ],
       "no-array-constructor": "error",
       "no-bitwise": "error",
       "no-continue": "error",
@@ -149,32 +189,71 @@
       "no-trailing-spaces": "warn",
       "no-unneeded-ternary": "warn",
       "no-whitespace-before-property": "warn",
-      "nonblock-statement-body-position": ["error", "below"],
+      "nonblock-statement-body-position": [
+        "error",
+        "below"
+      ],
       "object-curly-newline": [
         "error",
         {
           "multiline": true
         }
       ],
-      "object-curly-spacing": ["error", "always"],
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
       "object-property-newline": "error",
-      "one-var": ["error", "never"],
+      "one-var": [
+        "error",
+        "never"
+      ],
       "operator-assignment": "error",
-      "operator-linebreak": ["error", "after"],
-      "padded-blocks": ["warn", "never"],
+      "operator-linebreak": [
+        "error",
+        "after"
+      ],
+      "padded-blocks": [
+        "warn",
+        "never"
+      ],
       "prefer-exponentiation-operator": "error",
-      "quotes": ["error", "single"],
-      "semi": ["warn", "never"],
-      "space-before-blocks": ["error", "always"],
-      "space-before-function-paren": ["error", "always"],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "warn",
+        "never"
+      ],
+      "space-before-blocks": [
+        "error",
+        "always"
+      ],
+      "space-before-function-paren": [
+        "error",
+        "always"
+      ],
       "space-in-parens": "warn",
       "space-infix-ops": "warn",
-      "space-unary-ops": ["warn", {"words": true, "nonwords": false}],
+      "space-unary-ops": [
+        "warn",
+        {
+          "words": true,
+          "nonwords": false
+        }
+      ],
       "spaced-comment": "warn",
       "switch-colon-spacing": "warn",
       "wrap-regex": "warn",
-      "arrow-body-style": ["error", "as-needed"],
-      "arrow-parens": ["error", "as-needed"],
+      "arrow-body-style": [
+        "error",
+        "as-needed"
+      ],
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
       "arrow-spacing": "warn",
       "no-duplicate-imports": "error",
       "no-useless-computed-key": "error",
@@ -188,7 +267,10 @@
       "prefer-template": "error",
       "rest-spread-spacing": "warn",
       "symbol-description": "error",
-      "template-curly-spacing": ["warn", "always"]
+      "template-curly-spacing": [
+        "warn",
+        "always"
+      ]
     },
     "overrides": [
       {
@@ -210,7 +292,12 @@
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest",
     "collectCoverage": true,
-    "collectCoverageFrom": ["**/*.vue", "!**/node_modules/**"],
-    "coverageReporters": ["text"]
+    "collectCoverageFrom": [
+      "**/*.vue",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "text"
+    ]
   }
 }
