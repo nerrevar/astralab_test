@@ -21,56 +21,23 @@
 <script>
 import FormTemplate from '@/components/FormTemplate.vue'
 
+import {
+  nameFormFieldParams,
+  emailFormFieldParams,
+  passwordFormFieldParams,
+  repeatPasswordFormFieldParams,
+} from '@/utils'
+
 export default {
   name: 'SignUpView',
   components: { FormTemplate },
   data: () => {
-    const nameValidationFunction = str => str.trim() !== '' && str.replace(/[a-z ]+/i, '') === ''
-
-    const emailValidationFunction = str => str !== '' &&
-        str.replace(/^(([a-z\d+\-/]+([.][a-z\d\-+]+)*)|("[\S ]+"))@[a-z\-\d]+\.[a-z\d]+$/i, '') === ''
-
-    const passwordValidationFunction = str => {
-      if (str.length >= 8)
-        if (str.match(/[~`!@#$%^&*()_\-=+{}[\]|\\/:;"'<>,.?]/i) !== null)
-          if (str.match(/[A-Z]/g) !== null)
-            if (str.match(/[A-Z]/g).length >= 2)
-              return true
-
-      return false
-    }
-
     return {
       formFields: [
-        {
-          label: 'Full name',
-          inputType: 'text',
-          inputName: 'name',
-          errorMessage: 'Must contain only english letters',
-          validationFunction: nameValidationFunction,
-        },
-        {
-          label: 'Email',
-          inputType: 'email',
-          inputName: 'email',
-          errorMessage: 'Enter valid email',
-          validationFunction: emailValidationFunction,
-        },
-        {
-          label: 'Password',
-          inputType: 'password',
-          hint: 'Password must contain 8+ symbols, 1 special and 2 capital letters',
-          inputName: 'password',
-          errorMessage: 'Enter valid password',
-          validationFunction: passwordValidationFunction,
-        },
-        {
-          label: 'Repeat password',
-          inputType: 'password',
-          inputName: 'passwordReapeat',
-          errorMessage: 'Enter valid password',
-          validationFunction: passwordValidationFunction,
-        }
+        nameFormFieldParams,
+        emailFormFieldParams,
+        passwordFormFieldParams,
+        repeatPasswordFormFieldParams
       ],
       errorFields: [],
     }

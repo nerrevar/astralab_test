@@ -62,6 +62,11 @@ describe('FormGroup.vue input type - text', () => {
     expect(vm.emitted('invalidate')).toBeTruthy()
   })
 
+  it('method isValid with empty validation function', () => {
+    vm.vm.item.validationFunction = null
+    expect(vm.vm.isValid()).toBeTruthy()
+  })
+
   it('method getData on aaa', () => {
     vm.find('input').setValue('aaa')
     expect(vm.vm.getData()).toStrictEqual({ name: 'aaa' })

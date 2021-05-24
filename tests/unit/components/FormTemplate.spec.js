@@ -29,6 +29,10 @@ describe('FormTemplate.vue', () => {
   })
 
   it('method validateForm on invalid', () => {
+    vm.vm.invalidate('name')
+    vm.vm.validateForm()
+    expect(vm.emitted('submit')).toBeFalsy()
+    vm.vm.validate('name')
     vm.vm.$children[0].isValid = () => false
     vm.vm.validateForm()
     expect(vm.emitted('submit')).toBeFalsy()
